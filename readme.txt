@@ -70,6 +70,10 @@ New crawlers appear faster than plugin releases, so the list is filterable. See 
 
 Nothing is sent anywhere. There is no API key to obtain, no external service, and no paid tier. The plugin reads your own traffic and writes its own robots.txt rules.
 
+= Source code =
+
+The released source is on GitHub at https://github.com/aumcreate/aumcrawl — bug reports and pull requests are welcome there.
+
 == Installation ==
 
 1. Install and activate.
