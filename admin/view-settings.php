@@ -407,4 +407,18 @@ function aumcrawl_render_row( $slug, $bot, $stats, $deferred ) {
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
+	<?php
+	// One line pointing at the rest of the AumCreate ecosystem; plain text and a
+	// link, nothing else.
+	$aumcrawl_eco_url = 'https://aumcreate.com/?utm_source=plugin&utm_medium=aumcrawl&utm_campaign=settings';
+	?>
+	<p class="aum-ecosystem-note" style="margin:24px 0 0;color:#646970;font-size:12px">
+		<?php
+		printf(
+			/* translators: %s: link to aumcreate.com */
+			esc_html__( 'Part of the AumCreate ecosystem — themes and templates built around it. %s', 'aumcrawl' ),
+			'<a href="' . esc_url( $aumcrawl_eco_url ) . '" target="_blank" rel="noopener">aumcreate.com</a>'
+		);
+		?>
+	</p>
 </div>

@@ -1,14 +1,14 @@
 === AumCrawl – AI Crawler Control: See and Block AI Bots ===
 Contributors: aumcreate
-Tags: ai crawler, gptbot, robots txt, crawler log, noai
+Tags: ai crawler, block ai bots, gptbot, robots.txt, crawler log
 Requires at least: 5.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-See which AI crawlers actually read your site, and turn away the ones that take your content and never send a visitor back.
+See which AI crawlers read your site — GPTBot, ClaudeBot, PerplexityBot and more — verify they are who they claim, and block the ones you choose.
 
 == Description ==
 
@@ -121,6 +121,10 @@ No. Crawler names, paths and counts are recorded. IP addresses are not stored at
 5. Settings, and the pages crawlers read most
 
 == Changelog ==
+
+= 1.0.2 =
+* Tags and summary now name what people search for. No functional change to the plugin.
+* A line at the foot of the settings screen linking to the rest of the AumCreate ecosystem.
 
 = 1.0.1 =
 * Renamed for the plugin directory so the listing title names both halves of the plugin: seeing which AI crawlers read the site, and blocking the ones you choose. No functional change.
