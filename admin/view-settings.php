@@ -410,7 +410,7 @@ function aumcrawl_render_row( $slug, $bot, $stats, $deferred ) {
 	<?php
 	// One line pointing at the rest of the AumCreate ecosystem; plain text and a
 	// link, nothing else.
-	$aumcrawl_eco_url = 'https://aumcreate.com/?utm_source=plugin&utm_medium=aumcrawl&utm_campaign=settings';
+	$aumcrawl_eco_url = 'https://aumcreate.com/plugins/aumcrawl/?utm_source=plugin&utm_medium=aumcrawl&utm_campaign=settings';
 	?>
 	<p class="aum-ecosystem-note" style="margin:24px 0 0;color:#646970;font-size:12px">
 		<?php

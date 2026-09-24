@@ -4,7 +4,7 @@ Tags: ai crawler, block ai bots, gptbot, robots.txt, crawler log
 Requires at least: 5.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,10 @@ No. Crawler names, paths and counts are recorded. IP addresses are not stored at
 5. Settings, and the pages crawlers read most
 
 == Changelog ==
+
+= 1.0.4 =
+* Crawler settings and visit history from AumViso are imported automatically the first time this plugin runs on a site that had them — AumViso no longer carries the crawler feature, and without this its blocking rules would simply stop applying. Nothing is imported if you have already configured this plugin, and the notice that reports the import offers to undo it.
+* The link at the foot of the settings screen now goes to the plugin's own page on aumcreate.com instead of the site's front page.
 
 = 1.0.3 =
 * Added a link from the Plugins list to the plugin's page on aumcreate.com.

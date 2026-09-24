@@ -296,6 +296,10 @@ class AumCrawl_Admin {
 		$retain                       = isset( $_POST['aumcrawl_retain'] ) ? absint( wp_unslash( $_POST['aumcrawl_retain'] ) ) : 30;
 		$settings['retain_days']      = max( 7, min( 365, $retain ) );
 
+		// Marks the settings as the owner's own work. AumCrawl_Import reads this
+		// rather than testing whether the option row exists.
+		$settings['configured'] = 1;
+
 		update_option( AUMCRAWL_OPTION, $settings );
 
 		// robots.txt just changed, so the cached view of the live file is stale.

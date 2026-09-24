@@ -3,7 +3,7 @@
  * Plugin Name:       AumCrawl – AI Crawler Control: See and Block AI Bots
  * Plugin URI:       https://aumcreate.com/plugins/aumcrawl
  * Description:       See which AI crawlers read your site, and block the ones that never send traffic back. Logs every known crawler, verifies who they claim to be, and writes robots.txt rules alongside your SEO plugin instead of fighting it.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Requires at least: 5.5
  * Requires PHP:      7.4
  * Author:            AumCreate
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'AUMCRAWL_VERSION', '1.0.3' );
+define( 'AUMCRAWL_VERSION', '1.0.4' );
 define( 'AUMCRAWL_FILE', __FILE__ );
 define( 'AUMCRAWL_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AUMCRAWL_OPTION', 'aumcrawl_settings' );
@@ -32,6 +32,7 @@ require_once AUMCRAWL_DIR . 'includes/class-aumcrawl-headers.php';
 require_once AUMCRAWL_DIR . 'includes/class-aumcrawl-blocker.php';
 require_once AUMCRAWL_DIR . 'includes/class-aumcrawl-verify.php';
 require_once AUMCRAWL_DIR . 'includes/class-aumcrawl-privacy.php';
+require_once AUMCRAWL_DIR . 'includes/class-aumcrawl-import.php';
 
 /**
  * Default settings.
@@ -49,6 +50,7 @@ function aumcrawl_defaults() {
 		'hard_block'       => 0,
 		'verify_bots'      => 1,
 		'retain_days'      => 30,
+		'configured'       => 0,
 	);
 }
 
@@ -79,7 +81,13 @@ function aumcrawl_is_blocked( $slug ) {
 	return in_array( $slug, (array) $settings['blocked'], true );
 }
 
-register_activation_hook( __FILE__, array( 'AumCrawl_Install', 'activate' ) );
+register_activation_hook(
+	__FILE__,
+	static function () {
+		AumCrawl_Install::activate();
+		AumCrawl_Import::maybe_import();
+	}
+);
 register_deactivation_hook( __FILE__, array( 'AumCrawl_Install', 'deactivate' ) );
 
 new AumCrawl_Logger();
@@ -88,6 +96,8 @@ new AumCrawl_Headers();
 new AumCrawl_Blocker();
 new AumCrawl_Verify();
 new AumCrawl_Privacy();
+
+AumCrawl_Import::register();
 
 if ( is_admin() ) {
 	require_once AUMCRAWL_DIR . 'admin/class-aumcrawl-admin.php';
