@@ -1,8 +1,9 @@
 <?php
 /**
  * Plugin Name:       AumCrawl – AI Crawler Control: See and Block AI Bots
+ * Plugin URI:       https://aumcreate.com/plugins/aumcrawl
  * Description:       See which AI crawlers read your site, and block the ones that never send traffic back. Logs every known crawler, verifies who they claim to be, and writes robots.txt rules alongside your SEO plugin instead of fighting it.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Requires at least: 5.5
  * Requires PHP:      7.4
  * Author:            AumCreate
@@ -18,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'AUMCRAWL_VERSION', '1.0.2' );
+define( 'AUMCRAWL_VERSION', '1.0.3' );
 define( 'AUMCRAWL_FILE', __FILE__ );
 define( 'AUMCRAWL_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AUMCRAWL_OPTION', 'aumcrawl_settings' );

@@ -4,7 +4,7 @@ Tags: ai crawler, block ai bots, gptbot, robots.txt, crawler log
 Requires at least: 5.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,9 @@ No. Crawler names, paths and counts are recorded. IP addresses are not stored at
 5. Settings, and the pages crawlers read most
 
 == Changelog ==
+
+= 1.0.3 =
+* Added a link from the Plugins list to the plugin's page on aumcreate.com.
 
 = 1.0.2 =
 * Tags and summary now name what people search for. No functional change to the plugin.
